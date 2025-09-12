@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import {
   Calculation,
   Constant,
@@ -233,6 +234,7 @@ const App: React.FC = () => {
 
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
+      <SpeedInsights />
       <div className="flex flex-col w-full h-full max-w-3xl overflow-hidden rounded-none shadow-md md:rounded-lg md:h-[90vh]">
         <div className="flex flex-col flex-grow p-6 bg-white">
           <input
