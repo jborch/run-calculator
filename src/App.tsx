@@ -50,7 +50,7 @@ const App: React.FC = () => {
   const [input, setInput] = useState("");
   const [format, setFormat] = useState(Format.Metric);
   const [inputResult, setInputResult] = useState<Calculation | undefined>(
-    undefined
+    undefined,
   );
   const [results, setResults] = useState<Calculation[]>([]);
 
@@ -155,7 +155,7 @@ const App: React.FC = () => {
                     {part.unitString}
                   </span>
                 </span>
-              )
+              ),
           )}
         </div>
       );
@@ -224,8 +224,8 @@ const App: React.FC = () => {
       (x) =>
         new Calculation(
           x.Parts.map((x) => Part.fromJSON(x)),
-          x.Result ? Part.fromJSON(x.Result) : undefined
-        )
+          x.Result ? Part.fromJSON(x.Result) : undefined,
+        ),
     );
     setResults(results);
     const format = get<Format>("format", Format.Metric);
@@ -271,16 +271,7 @@ const App: React.FC = () => {
             <div className="mt-4">
               <p>
                 <span className="font-monomaniac">run-calculator.com </span> is
-                an{" "}
-                <a
-                  href="https://github.com/jborch/run-calculator"
-                  target="_blank"
-                  title="View on GitHub"
-                  className="text-blue-600"
-                >
-                  open source
-                </a>
-                , simple and easy-to-use pace calculator for runners. Enter your
+                a simple and easy-to-use pace calculator for runners. Enter your
                 calculation in the input field above and press "Enter" to save
                 the result. You can double click on a previous result to copy it
                 to the input field.
